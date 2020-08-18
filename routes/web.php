@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::any('login','LoginController@login');
+Route::any('test','LoginController@test');
