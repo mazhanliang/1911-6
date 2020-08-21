@@ -26,6 +26,6 @@ Route::any('getImgUrl','api\BlogController@getImageCodeUrl');
 //发送短信验证码
 Route::any('sendMsgCode','api\MsgController@sendMsgCode');
 
-//注册接口
+//注册接口111
 Route::any('reg','api\UserController@reg');
 
