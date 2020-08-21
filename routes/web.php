@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//展示图片验证码
+Route::any('showImageCode','api\BlogController@showImageCode');
+
+//获取图片验证码
+Route::any('getImgUrl','api\BlogController@getImageCodeUrl');
+
+//发送短信验证码
+Route::any('sendMsgCode','api\MsgController@sendMsgCode');
+
+//注册接口
+Route::any('reg','api\UserController@reg');
+
