@@ -36,6 +36,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Throwable $exception)
     {
+
         if ($exception instanceof ApiException) {
             $msg = $exception->getMessage();
             $code = $exception->getCode();
@@ -48,6 +49,7 @@ class Handler extends ExceptionHandler
             exit;
         }
             parent::report($exception);
+ 
     }
     /**
      * Render an exception into an HTTP response.

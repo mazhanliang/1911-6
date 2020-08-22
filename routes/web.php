@@ -29,3 +29,6 @@ Route::any('sendMsgCode','api\MsgController@sendMsgCode');
 //注册接口111
 Route::any('reg','api\UserController@reg');
 
+Route::any('login','LoginController@login');
+Route::any('test','LoginController@test');
+
