@@ -8,7 +8,6 @@ use App\Model\UserTokenModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redis;
-
 class LoginController extends CommonController
 {
 

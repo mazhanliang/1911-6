@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exceptions\ApiException;
 use App\Http\Controllers\Controller;
 use App\Model\UserToken;
+use Illuminate\Support\Facades\Redis;
 
 class  CommonController extends Controller
 {
@@ -53,6 +54,25 @@ class  CommonController extends Controller
         }
         return $value;
     }
-    
 
+    /**
+     * @param string $cache_type
+     * @return
+     * 获取缓存的版本号
+     */
+    public function getCacheVersion($cache_type='news'){
+        switch($cache_type){
+            case 'news':
+                $cache_version_key='news_cache_version';
+                $version=Redis::get($cache_version_key);
+                break;
+            default;
+                break;
+        }
+        if(empty($version)){
+            Redis::set($cache_version_key,1);
+            $version=1;
+        }
+        return $version;
+    }
 }

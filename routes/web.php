@@ -16,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//登录接口
 Route::any('login','LoginController@login');
-Route::any('test','LoginController@test');
+
+//展示图片验证码
+//Route::any('test','LoginController@test');
+
+Route::any('newslist','NewsController@newslist');
+Route::any('test','NewsController@test');
+Route::any('details','NewsController@details');
+Route::any('remai','NewsController@remai');
